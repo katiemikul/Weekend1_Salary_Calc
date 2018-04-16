@@ -42,8 +42,18 @@ function runAnnualSalary(){
     updatetotalSalary();
     $('.totalMonthly').text(parseInt(addingSalary));
 
-}
+    $("#annualSalary").each(function() {
+        let value = $(this).text();
+      
+        if(!isNaN(value) && value.length != 0) {
+       console.log(value, parseFloat(value));
+            sum += parseFloat(value);
+        }
+ 
+})
+
 
 function updatetotalSalary(){
-
+    $('.totalMonthly').text(addingSalary);
+}
 }
