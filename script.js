@@ -41,19 +41,9 @@ function runAnnualSalary(){
     console.log(addingSalary);
     updatetotalSalary();
     $('.totalMonthly').text(parseInt(addingSalary));
-
-    $("#annualSalary").each(function() {
-        let value = $(this).text();
-      
-        if(!isNaN(value) && value.length != 0) {
-       console.log(value, parseFloat(value));
-            sum += parseFloat(value);
-        }
- 
-})
-
+}
 
 function updatetotalSalary(){
+    console.log('We are working on the budget!');
     $('.totalMonthly').text(addingSalary);
-}
 }
