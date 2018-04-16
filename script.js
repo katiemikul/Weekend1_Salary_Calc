@@ -1,8 +1,11 @@
 console.log('Weekend Homework!')
 $(document).ready(onReady);
 
+let addingSalary = 0;
+
 function onReady(){
     console.log("we are ready!");
+    $('#submitButton').on('click', runAnnualSalary);
     $('#submitButton').on('click', function(){
         console.log('We are clicking!');
         addNewEmployee();
@@ -17,10 +20,11 @@ $('#createNewEmployee').append(
                     '<td>' + $('#lastNameInput').val() + '</td>' +
                     '<td>' + $('#idInput').val() + '</td>' +
                     '<td>' + $('#titleInput').val() + '</td>' +
-                    '<td>' + $('#annualSalaryInput').val() + '</td>' +
+                    '<td>' + $('.annualSalaryInput').val() + '</td>' +
                 '</tr>'
 );
     clearEmployee();
+    runAnnualSalary();
 }
 
 function clearEmployee(){
@@ -28,5 +32,18 @@ function clearEmployee(){
     $('#lastNameInput').val('');
     $('#idInput').val('');
     $('#titleInput').val('');
-    $('#annualSalaryInput').val('');
+    $('.annualSalaryInput').val('');
+}
+
+function runAnnualSalary(){
+    console.log("Submit button was clicked!");
+    addingSalary+=
+    console.log(addingSalary);
+    updatetotalSalary();
+    $('.totalMonthly').text(parseInt(addingSalary));
+
+}
+
+function updatetotalSalary(){
+
 }
